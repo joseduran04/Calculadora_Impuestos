@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cálculo de Impuestos Anuales</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Cálculo de Impuestos Anuales</h1>
+    </header>
+    <div class="container">
+      <!-- Establecer Mes -->
+      <div class="card">
+        <h2>Establecer Mes</h2>
+        <select id="mesActual">
+          <option value="0">Enero</option>
+          <option value="1">Febrero</option>
+          <option value="2">Marzo</option>
+          <option value="3">Abril</option>
+          <option value="4">Mayo</option>
+          <option value="5">Junio</option>
+          <option value="6">Julio</option>
+          <option value="7">Agosto</option>
+          <option value="8">Septiembre</option>
+          <option value="9">Octubre</option>
+          <option value="10">Noviembre</option>
+          <option value="11">Diciembre</option>
+        </select>
+        <button onclick="establecerMes()">Establecer Mes</button>
+      </div>
+
+      <!-- Captura de Ingresos y Gastos -->
+      <div class="card">
+        <h2>Capturar Datos</h2>
+        <input type="number" id="ingresoMes" placeholder="Ingresos del mes" />
+        <input type="number" id="gastoMes" placeholder="Gastos del mes" />
+        <button onclick="capturarDatos()">Capturar Datos</button>
+      </div>
+
+      <!-- Mostrar Ingresos Anuales -->
+      <div class="card">
+        <h2>Ingresos y Gastos Anuales</h2>
+        <button onclick="mostrarAnuales()">Mostrar Ingresos y Gastos</button>
+        <table id="tablaAnuales" style="display: none">
+          <thead>
+            <tr>
+              <th>Mes</th>
+              <th>Ingresos</th>
+              <th>Gastos</th>
+            </tr>
+          </thead>
+          <tbody id="tablaCuerpo"></tbody>
+        </table>
+      </div>
+
+      <!-- Resumen de Impuestos -->
+      <div class="card">
+        <h2>Calcular Impuestos</h2>
+        <button onclick="calcularImpuestos()">Calcular Resumen</button>
+        <div id="resumenImpuestos" class="result" style="display: none"></div>
+      </div>
+
+      <button onclick="exportarExcel()">Exportar a Excel</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
